@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://your-frontend-url.vercel.app']
+  origin: ["https://ai-news-app-aftab0008-aftabs-projects-1a8d2dcd.vercel.app/"]
 }));
 
 
