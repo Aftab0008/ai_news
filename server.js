@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-  origin: ["https://ai-news-front.vercel.app/"]
+  origin: ['https://ai-news-front.vercel.app/']
 }));
 
 
