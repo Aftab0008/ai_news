@@ -5,8 +5,9 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-  origin: 'https://your-frontend-url.vercel.app',  // Replace with your actual frontend URL
+  origin: ['http://localhost:5173', 'https://your-frontend-url.vercel.app']
 }));
+
 
 const PORT = 5000;
 const API_KEY = process.env.NEWS_API_KEY;
