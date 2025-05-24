@@ -4,10 +4,14 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-app.use(cors({
-  origin: ['https://ai-news-front.vercel.app/']
-}));
 
+// ✅ Fixed CORS: Removed trailing slash
+app.use(cors({
+  origin: [
+    'https://ai-news-front.vercel.app',
+    'http://localhost:3000' // Optional: for local development
+  ]
+}));
 
 const PORT = 5000;
 const API_KEY = process.env.NEWS_API_KEY;
@@ -15,6 +19,7 @@ const API_KEY = process.env.NEWS_API_KEY;
 app.get('/api/news', async (req, res) => {
   console.log('📡 API call to /api/news received');
   try {
+    // ✅ Fixed missing backticks in the template string
     const response = await axios.get(`https://newsapi.org/v2/top-headlines?sources=the-times-of-india&apiKey=${API_KEY}`);
     console.log('✅ News fetched');
     res.json(response.data);
