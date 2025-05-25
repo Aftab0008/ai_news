@@ -20,7 +20,7 @@ app.get('/api/news', async (req, res) => {
   console.log('📡 API call to /api/news received');
   try {
     // ✅ Fixed missing backticks in the template string
-    const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`);
+    const response = await axios.get(`https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=7a773c3ccc0a4975942b779e8864efe7`);
     console.log('✅ News fetched');
     res.json(response.data);
   } catch (error) {
